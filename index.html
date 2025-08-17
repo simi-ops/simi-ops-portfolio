@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simi Ops - Junior Cloud Engineer | Nairobi to the Cloud ☁️</title>
+    <meta name="description" content="Junior Cloud Engineer from Kenya scaling infrastructure from Nairobi to the world with AWS magic">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+    <!-- External Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+</head>
+<body>
+    <!-- Global Background Elements -->
+    <div id="particles-js"></div>
+    <div id="three-container"></div>
+    
+    <!-- Coffee Bean Physics Container -->
+    <div id="coffee-beans-container"></div>
+    
+    <!-- Coffee Meter -->
+    <div class="coffee-meter">
+        <div class="coffee-meter-label">☕ Caffeine Level</div>
+        <div class="coffee-meter-bar">
+            <div class="coffee-meter-fill" id="caffeineFill">0%</div>
+        </div>
+        <div class="coffee-meter-count" id="beanCount">0 beans</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <span class="brand-icon">☁️</span>
+            <span class="brand-text">Simi Ops Dashboard</span>
+        </div>
+        
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" aria-label="Toggle mobile menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <div class="nav-links">
+            <a href="#hero" class="nav-link active">EC2-Instance</a>
+            <a href="#about" class="nav-link">About-Me</a>
+            <a href="#skills" class="nav-link">Service-Catalog</a>
+            <a href="#projects" class="nav-link">Lambda-Functions</a>
+            <a href="#blog" class="nav-link">Tech-Blog</a>
+            <a href="#roadmap" class="nav-link">Mission-Roadmap</a>
+            <a href="#contact" class="nav-link">Support-Tickets</a>
+        </div>
+        
+        <div class="nav-status">
+            <div class="status-dot"></div>
+            <span>Nairobi Region: HEALTHY</span>
+        </div>
+    </nav>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress">
+        <div class="progress-bar"></div>
+    </div>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero">
+            <div class="container">
+                <!-- Coffee to Code Animation -->
+                <div class="coffee-to-code-animation" id="coffeeAnimation">
+                    <div class="coffee-cup">
+                        <div class="cup-body">☕</div>
+                        <div class="steam">
+                            <span class="steam-particle">~</span>
+                            <span class="steam-particle">~</span>
+                            <span class="steam-particle">~</span>
+                        </div>
+                        <div class="coffee-liquid"></div>
+                    </div>
+                    <div class="floating-code">
+                        <span class="code-char">{</span>
+                        <span class="code-char">}</span>
+                        <span class="code-char">[</span>
+                        <span class="code-char">]</span>
+                        <span class="code-char">;</span>
+                        <span class="code-char">=</span>
+                        <span class="code-char">+</span>
+                        <span class="code-char">-</span>
+                    </div>
+                    <div class="code-terminal">
+                        <div class="terminal-header">
+                            <span class="terminal-title">simi-ops@nairobi:~$</span>
+                        </div>
+                        <div class="terminal-content">
+                            <div class="code-line">import coffee</div>
+                            <div class="code-line">def simi_codes():</div>
+                            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;while coffee.level > 0:</div>
+                            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;write_awesome_code()</div>
+                            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;deploy_to_aws()</div>
+                            <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;return "Time for more coffee! ☕"</div>
+                            <div class="code-line coffee-comment"># Powered by Kenyan Coffee ☕</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hero-content">
+                    <div class="hero-text">
+                        <h1 class="hero-title">
+                            <span class="title-line">Scaling from</span>
+                            <span class="title-line accent">Nairobi to the Cloud</span>
+                            <span class="title-line">One Lambda at a Time ⚡</span>
+                        </h1>
+                        <p class="hero-description">
+                            Jambo! I'm Simi Ops, a Junior Cloud Engineer from Kenya 🇰🇪 
+                            turning coffee into CloudFormation templates and dreams into 
+                            auto-scaling infrastructure. Let's build something amazing together!
+                        </p>
+                        <div class="hero-metrics">
+                            <div class="metric">
+                                <div class="metric-value">99.5%</div>
+                                <div class="metric-label">Uptime (Learning!)</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">15+</div>
+                                <div class="metric-label">AWS Services</div>
+                            </div>
+                            <div class="metric">
+                                <div class="metric-value">∞</div>
+                                <div class="metric-label">Curiosity Level</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Call to Action Buttons -->
+                        <div class="hero-actions">
+                            <button class="cta-button primary">
+                                <span class="cta-icon">📄</span>
+                                Download Resume
+                            </button>
+                            <button class="cta-button secondary">
+                                <span class="cta-icon">🐙</span>
+                                View GitHub
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="hero-dashboard">
+                        <h3>🚀 Current Status</h3>
+                        <div class="status-grid">
+                            <div class="status-item">
+                                <div class="status-dot active"></div>
+                                <span>AWS Learning Path</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot active"></div>
+                                <span>Kubernetes Pods</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot active"></div>
+                                <span>Coffee Levels ☕</span>
+                            </div>
+                            <div class="status-item">
+                                <div class="status-dot active"></div>
+                                <span>Hakuna Matata Mode</span>
+                            </div>
+                        </div>
+                        
+                        <!-- GitHub Stats -->
+                        <div class="github-stats">
+                            <h4>📊 This Week</h4>
+                            <div class="stats-grid">
+                                <div class="stat-item">
+                                    <span class="stat-number">23</span>
+                                    <span class="stat-label">Commits</span>
+                                </div>
+                                <div class="stat-item">
+                                    <span class="stat-number">7</span>
+                                    <span class="stat-label">Days Streak</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">CloudFormation Template: About Me</h2>
+                    <p class="section-subtitle">Provisioning dreams and deploying solutions from the heart of East Africa</p>
+                </div>
+                
+                <div class="about-content">
+                    <div class="about-text">
+                        <h3>🌍 From Nairobi with Love (and Code)</h3>
+                        <p>
+                            Habari! I'm Simi, a passionate Junior Cloud Engineer based in beautiful Kenya 🇰🇪. 
+                            When I'm not busy turning ugali into microservices or debugging Terraform configs 
+                            over a cup of Kenyan coffee, I'm exploring the endless possibilities of AWS and 
+                            dreaming of infrastructure that scales like the Maasai Mara during migration season!
+                        </p>
+                        <p>
+                            My journey started with curiosity and a laptop, and now I'm here building 
+                            cloud solutions that would make even Mount Kenya proud. I believe in the power 
+                            of technology to transform lives, and I'm on a mission to bring that magic 
+                            from Nairobi to the world! 🚀
+                        </p>
+                        <div class="highlights">
+                            <div class="highlight">
+                                <span class="highlight-icon">🏗️</span>
+                                <span>Infrastructure as Code (IaC)</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">⚡</span>
+                                <span>Serverless Architectures</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">🛡️</span>
+                                <span>Security Best Practices</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">📊</span>
+                                <span>CloudWatch Monitoring</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">🌍</span>
+                                <span>Multi-Region Deployments</span>
+                            </div>
+                            <div class="highlight">
+                                <span class="highlight-icon">☕</span>
+                                <span>Coffee-Driven Development</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">AWS Service Catalog 📋</h2>
+                    <p class="section-subtitle">My cloud toolkit - growing stronger every day like Kenyan tea!</p>
+                </div>
+                
+                <div class="skills-grid">
+                    <div class="skill-card">
+                        <div class="skill-icon">☁️</div>
+                        <h3>Amazon Web Services</h3>
+                        <p>EC2, S3, Lambda, RDS, CloudFormation, IAM, VPC</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="75"></div>
+                        </div>
+                        <small>Junior level but growing fast! 🚀</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">⚙️</div>
+                        <h3>Kubernetes</h3>
+                        <p>Pods, Services, Deployments, ConfigMaps</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="60"></div>
+                        </div>
+                        <small>Learning the orchestration dance! 💃</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🐳</div>
+                        <h3>Docker</h3>
+                        <p>Containerization, Dockerfile, Docker Compose</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="70"></div>
+                        </div>
+                        <small>Containers everywhere! 📦</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🏗️</div>
+                        <h3>Terraform</h3>
+                        <p>Infrastructure as Code, State Management</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="65"></div>
+                        </div>
+                        <small>Building infrastructure like LEGO! 🧱</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🐍</div>
+                        <h3>Python</h3>
+                        <p>Automation, Boto3, Lambda Functions</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="80"></div>
+                        </div>
+                        <small>My automation sidekick! 🤖</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🔧</div>
+                        <h3>Linux & Bash</h3>
+                        <p>Command line ninja, Shell scripting</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="85"></div>
+                        </div>
+                        <small>Terminal is my playground! 💻</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🔀</div>
+                        <h3>Git & GitHub</h3>
+                        <p>Version control, Collaboration, Actions</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="78"></div>
+                        </div>
+                        <small>Committing to excellence! 📝</small>
+                    </div>
+                    
+                    <div class="skill-card">
+                        <div class="skill-icon">🔄</div>
+                        <h3>CI/CD Pipeline</h3>
+                        <p>GitHub Actions, Jenkins, Automated Testing</p>
+                        <div class="skill-level">
+                            <div class="skill-bar" data-level="68"></div>
+                        </div>
+                        <small>Deploy like a pro! 🎯</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Lambda Functions (My Projects) ⚡</h2>
+                    <p class="section-subtitle">Small projects with big dreams - serverless and proud!</p>
+                </div>
+                
+                <div class="projects-grid">
+                    <div class="project-card">
+                        <h3>🏠 Personal Website on AWS</h3>
+                        <p>
+                            Built this very portfolio using S3, CloudFront, and Route 53. 
+                            Because every cloud engineer needs a cloud-native presence! 
+                            Deployed from Nairobi with love. ❤️
+                        </p>
+                        <div class="project-details">
+                            <button class="details-toggle">View Architecture</button>
+                            <div class="project-architecture hidden">
+                                <div class="architecture-diagram">
+                                    <div class="arch-node">Route 53</div>
+                                    <div class="arch-arrow">→</div>
+                                    <div class="arch-node">CloudFront</div>
+                                    <div class="arch-arrow">→</div>
+                                    <div class="arch-node">S3 Bucket</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">S3</span>
+                            <span class="tag">CloudFront</span>
+                            <span class="tag">Route 53</span>
+                            <span class="tag">First Project!</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>📊 Cost Monitoring Bot</h3>
+                        <p>
+                            Created a Python Lambda that sends me WhatsApp alerts when my 
+                            AWS bill goes above my "ugali budget". Because cloud costs 
+                            shouldn't surprise you like Nairobi traffic! 🚗
+                        </p>
+                        <div class="project-details">
+                            <button class="details-toggle">View Code</button>
+                            <div class="project-code hidden">
+                                <pre><code class="language-python">import boto3
+import json
+
+def lambda_handler(event, context):
+    # Check AWS billing
+    billing = boto3.client('ce')
+    cost = billing.get_cost_and_usage(...)
+    
+    if cost > UGALI_BUDGET:
+        send_whatsapp_alert(cost)
+    
+    return {'statusCode': 200}</code></pre>
+                            </div>
+                        </div>
+                        <div class="project-tags">
+                            <span class="tag">Lambda</span>
+                            <span class="tag">CloudWatch</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">Budget Saver</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>🌐 Learning Lab Environment</h3>
+                        <p>
+                            Terraform scripts to spin up and tear down learning environments. 
+                            Practice makes perfect, and my wallet stays happy with 
+                            infrastructure that auto-destroys! 💰
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">Terraform</span>
+                            <span class="tag">EC2</span>
+                            <span class="tag">Auto-Scaling</span>
+                            <span class="tag">Learning</span>
+                        </div>
+                    </div>
+                    
+                    <div class="project-card">
+                        <h3>☕ Coffee Shop API</h3>
+                        <p>
+                            A serverless API for my local coffee shop using API Gateway 
+                            and Lambda. Because every Kenyan coffee deserves a proper 
+                            cloud-native ordering system! ☕
+                        </p>
+                        <div class="project-tags">
+                            <span class="tag">API Gateway</span>
+                            <span class="tag">Lambda</span>
+                            <span class="tag">DynamoDB</span>
+                            <span class="tag">Coffee Love</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">From the Terminal 📝</h2>
+                    <p class="section-subtitle">Sharing my cloud journey, one post at a time - from Nairobi to the world!</p>
+                </div>
+                
+                <div class="blog-content">
+                    <div class="blog-intro">
+                        <h3>🌍 Welcome to My Tech Blog!</h3>
+                        <p>
+                            Join me on my cloud engineering journey as I document everything from 
+                            AWS adventures to Kubernetes discoveries, all while sipping Kenyan coffee ☕ 
+                            and sharing the lessons learned from building infrastructure in East Africa.
+                        </p>
+                    </div>
+                    
+                    <div class="blog-highlights">
+                        <div class="blog-card featured">
+                            <div class="blog-icon">🚀</div>
+                            <h4>Latest Posts</h4>
+                            <ul class="blog-topics">
+                                <li>☁️ AWS Cost Optimization Tips from a Junior Engineer</li>
+                                <li>🐳 Docker Containers: My Learning Journey</li>
+                                <li>🇰🇪 Building Cloud Infrastructure from Nairobi</li>
+                                <li>☕ Coffee-Driven Development: My Coding Ritual</li>
+                                <li>📚 AWS Certification Study Guide & Tips</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-icon">💡</div>
+                            <h4>What You'll Find</h4>
+                            <ul class="blog-topics">
+                                <li>🎯 Beginner-friendly tutorials</li>
+                                <li>🛠️ Real-world project breakdowns</li>
+                                <li>🇰🇪 African tech perspective</li>
+                                <li>☕ Coffee & code combinations</li>
+                                <li>📈 Career growth insights</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="blog-card">
+                            <div class="blog-icon">🌟</div>
+                            <h4>Community</h4>
+                            <ul class="blog-topics">
+                                <li>💬 Interactive discussions</li>
+                                <li>🤝 Networking opportunities</li>
+                                <li>📚 Resource sharing</li>
+                                <li>🎉 Success story celebrations</li>
+                                <li>🌍 Global cloud community</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="blog-cta">
+                        <h3>Ready to Join the Journey? 🚀</h3>
+                        <p>
+                            Dive into my latest posts, tutorials, and cloud adventures. 
+                            Let's learn and grow together in the world of cloud engineering!
+                        </p>
+                        <div class="blog-actions">
+                            <a href="https://blog.simiops.fun" target="_blank" class="blog-button primary">
+                                <span class="blog-icon">📖</span>
+                                Visit My Blog
+                            </a>
+                            <a href="https://blog.simiops.fun/subscribe" target="_blank" class="blog-button secondary">
+                                <span class="blog-icon">📬</span>
+                                Subscribe for Updates
+                            </a>
+                        </div>
+                        
+                        <div class="blog-stats">
+                            <div class="stat-item">
+                                <span class="stat-number">25+</span>
+                                <span class="stat-label">Blog Posts</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">500+</span>
+                                <span class="stat-label">Readers</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-number">12</span>
+                                <span class="stat-label">Countries</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Goals/Roadmap Section -->
+        <section id="roadmap" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Mission Roadmap 🗺️</h2>
+                    <p class="section-subtitle">From Nairobi to the cloud - my journey to senior cloud engineer</p>
+                </div>
+                
+                <div class="roadmap-content">
+                    <div class="timeline">
+                        <div class="timeline-item completed">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot completed"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2024</div>
+                                <h3>🎯 Foundation Phase</h3>
+                                <div class="timeline-achievements">
+                                    <div class="achievement-item completed">
+                                        <span class="check">✅</span>
+                                        <span>AWS Cloud Practitioner Certified</span>
+                                    </div>
+                                    <div class="achievement-item completed">
+                                        <span class="check">✅</span>
+                                        <span>Mastered Docker & Basic Kubernetes</span>
+                                    </div>
+                                    <div class="achievement-item completed">
+                                        <span class="check">✅</span>
+                                        <span>Built first cloud portfolio website</span>
+                                    </div>
+                                    <div class="achievement-item completed">
+                                        <span class="check">✅</span>
+                                        <span>Joined Nairobi DevOps community</span>
+                                    </div>
+                                </div>
+                                <p class="timeline-description">
+                                    Started my cloud journey with solid fundamentals. 
+                                    Learned the basics while sipping Kenyan coffee! ☕
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item current">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot current"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2025</div>
+                                <h3>🚀 Growth Phase</h3>
+                                <div class="timeline-achievements">
+                                    <div class="achievement-item in-progress">
+                                        <span class="check">🎯</span>
+                                        <span>AWS Solutions Architect Associate (65% complete)</span>
+                                    </div>
+                                    <div class="achievement-item planned">
+                                        <span class="check">📋</span>
+                                        <span>Advanced Kubernetes & Helm</span>
+                                    </div>
+                                    <div class="achievement-item planned">
+                                        <span class="check">📋</span>
+                                        <span>Terraform Associate Certification</span>
+                                    </div>
+                                    <div class="achievement-item planned">
+                                        <span class="check">📋</span>
+                                        <span>First junior cloud engineer role</span>
+                                    </div>
+                                </div>
+                                <p class="timeline-description">
+                                    Leveling up my skills and hunting for that first cloud role. 
+                                    Ready to turn coffee into CloudFormation! ⚡
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item future">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot future"></div>
+                                <div class="timeline-line"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2026</div>
+                                <h3>🌟 Expertise Phase</h3>
+                                <div class="timeline-achievements">
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>AWS Professional Certifications</span>
+                                    </div>
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Lead cloud migration projects</span>
+                                    </div>
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Mentor other junior engineers</span>
+                                    </div>
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Speak at tech conferences</span>
+                                    </div>
+                                </div>
+                                <p class="timeline-description">
+                                    Building expertise and giving back to the community. 
+                                    From Nairobi to the world! 🌍
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="timeline-item future">
+                            <div class="timeline-marker">
+                                <div class="timeline-dot future"></div>
+                            </div>
+                            <div class="timeline-content">
+                                <div class="timeline-year">2027+</div>
+                                <h3>🏆 Leadership Phase</h3>
+                                <div class="timeline-achievements">
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Senior Cloud Engineer / Team Lead</span>
+                                    </div>
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Architect enterprise solutions</span>
+                                    </div>
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Build cloud engineering team</span>
+                                    </div>
+                                    <div class="achievement-item future">
+                                        <span class="check">🔮</span>
+                                        <span>Launch cloud consultancy</span>
+                                    </div>
+                                </div>
+                                <p class="timeline-description">
+                                    The dream: Leading teams and building the future of cloud in Africa. 
+                                    Hakuna Matata, we got this! 🦁
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Open Support Ticket 🎫</h2>
+                    <p class="section-subtitle">Let's connect and build something amazing together!</p>
+                </div>
+                
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <span class="contact-icon">📧</span>
+                            <span>simi.ops@cloudmail.ke</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">💼</span>
+                            <span>LinkedIn: /in/simi-ops-kenya</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🐙</span>
+                            <span>GitHub: /simi-ops</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🐦</span>
+                            <span>Twitter: @SimiOpsKE</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">🌍</span>
+                            <span>Location: Nairobi, Kenya 🇰🇪</span>
+                        </div>
+                        <div class="contact-item">
+                            <span class="contact-icon">☕</span>
+                            <span>Timezone: EAT (East Africa Time)</span>
+                        </div>
+                    </div>
+                    
+                    <div class="fun-facts">
+                        <h3>🎉 Fun Facts About Me:</h3>
+                        <ul>
+                            <li>🦁 I debug code better after visiting Nairobi National Park</li>
+                            <li>☕ My code runs on Kenyan coffee and determination</li>
+                            <li>🌍 I dream in Terraform and think in Python</li>
+                            <li>🚀 My goal: Build infrastructure that scales like my ambitions</li>
+                            <li>📚 Currently studying for AWS Solutions Architect Associate</li>
+                            <li>🎵 I code to Afrobeats and deploy to the rhythm</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Scripts -->
+    <script src="js/particles.js"></script>
+    <script src="js/three-scene.js"></script>
+    <script src="js/coffee-physics.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
