@@ -1,0 +1,68 @@
+name: Deploy Portfolio to AWS
+
+on:
+  push:
+    branches: [ main ]
+    paths-ignore:
+      - 'README.md'
+      - '.gitignore'
+
+env:
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
+  CLOUDFRONT_ID: ${{ vars.CLOUDFRONT_ID }}
+
+jobs:
+  deploy:
+    name: Deploy to AWS
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v4
+      
+    - name: Configure AWS
+      uses: aws-actions/configure-aws-credentials@v4
+      with:
+        aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ env.AWS_REGION }}
+        
+    - name: Sync to S3 with smart caching
+      run: |
+        # Upload with different cache policies
+        aws s3 sync . s3://${{ env.S3_BUCKET }} \
+          --delete \
+          --exclude ".git/*" \
+          --exclude ".github/*" \
+          --exclude "README.md" \
+          --exclude ".gitignore"
+          
+        # HTML - short cache (1 hour)
+        aws s3 cp index.html s3://${{ env.S3_BUCKET }}/ \
+          --content-type "text/html; charset=utf-8" \
+          --cache-control "public, max-age=3600"
+          
+        # Static assets - long cache (1 year)
+        aws s3 sync styles/ s3://${{ env.S3_BUCKET }}/styles/ \
+          --content-type "text/css" \
+          --cache-control "public, max-age=31536000"
+          
+        aws s3 sync js/ s3://${{ env.S3_BUCKET }}/js/ \
+          --content-type "application/javascript" \
+          --cache-control "public, max-age=31536000"
+          
+    - name: CloudFront Invalidation
+      run: |
+        INVALIDATION_ID=$(aws cloudfront create-invalidation \
+          --distribution-id ${{ env.CLOUDFRONT_ID }} \
+          --paths "/*" \
+          --query 'Invalidation.Id' \
+          --output text)
+        echo "Invalidation created: $INVALIDATION_ID"
+        
+    - name: Success Notification
+      run: |
+        echo "::notice::Simi Ops Portfolio deployed successfully!"
+        echo "::notice::From Nairobi to the cloud in $(date)"
+        echo "::notice::Live at: https://simiops.fun"
