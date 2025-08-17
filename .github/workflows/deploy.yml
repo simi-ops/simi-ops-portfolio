@@ -8,8 +8,8 @@ on:
       - '.gitignore'
 
 env:
-  AWS_REGION: eu-west-1
-  S3_BUCKET: ${{ secrets.S3_BUCKET_NAME }}
+  AWS_REGION: ${{ vars.AWS_REGION }}
+  S3_BUCKET: ${{ vars.S3_BUCKET }}
   CLOUDFRONT_ID: ${{ vars.CLOUDFRONT_ID }}
 
 jobs:
